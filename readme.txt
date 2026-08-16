@@ -63,6 +63,11 @@ This lite version is always-on with no settings page, keeping it as lightweight 
 
 [BlueFairy Performance Kit Pro](https://wordpress.bluefairydevelopment.com/product/bluefairy-performance-kit/) adds LQIP blur-up image placeholders, critical CSS extraction with inline delivery, preconnect and LCP preload resource hints, and local Google Fonts subsetting and self-hosting.
 
+== Screenshots ==
+
+1. The plugin row in Plugins > Installed Plugins — zero configuration, no Settings link.
+2. All four BlueFairy Lite plugins active together, showing the clean zero-config approach.
+
 == Changelog ==
 
 = 1.0.0 — 2026-08-15 =
