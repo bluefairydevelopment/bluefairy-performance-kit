@@ -116,7 +116,7 @@ class Plugin
         return array_values(
             array_filter(
                 $urls,
-                static fn(array $url): bool => ! str_contains($url['href'] ?? '', 's.w.org')
+                static fn(array $url): bool => ! str_contains($url['href'] ?? '', 's.w.org') // phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent
             )
         );
     }
