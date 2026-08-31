@@ -52,7 +52,7 @@ final class FeatureRegistry {
     public static function descriptions(): array {
         $descriptions = [
             'lazy_loading' => __( 'Adds loading="lazy" to iframes in post content. WordPress already does this for images.', 'bluefairy-performance-kit' ),
-            'emoji'        => __( 'Removes the emoji detection script, its styles and the s.w.org DNS prefetch.', 'bluefairy-performance-kit' ),
+            'emoji'        => __( 'Removes the emoji detection script, its stylesheet, the feed and mail filters, and the DNS prefetch hint WordPress adds for them.', 'bluefairy-performance-kit' ),
             'embeds'       => __( 'Removes oEmbed discovery links and the wp-embed script from the front end.', 'bluefairy-performance-kit' ),
             'heartbeat'    => __( 'Stops the heartbeat polling on the front end only. It keeps running in wp-admin and the editor.', 'bluefairy-performance-kit' ),
         ];
