@@ -1,0 +1,137 @@
+BLUEFAIRY PERFORMANCE KIT (FREE) — MARKETING COPY
+=================================================
+
+Source of truth for the FREE half. The Pro half has its own file at
+../bluefairy-performance-kit-pro/docs/MARKETING.txt. The comparison table both
+use is COMPARISON.md next to this file — do not restate it from memory.
+
+
+3-SENTENCE SUMMARY
+------------------
+
+BlueFairy Performance Kit removes the front-end weight WordPress adds whether
+you use it or not: the emoji detection script and its stylesheet, the oEmbed
+discovery links and wp-embed.js, and the heartbeat that polls admin-ajax for
+visitors who will never see wp-admin. It also adds loading="lazy" to iframes in
+post content, which WordPress does for images but not for embeds. Free,
+GPL-2.0-or-later, PHP 8.1+, WordPress 6.4+; add BlueFairy Performance Kit Pro
+when you want critical CSS, self-hosted Google Fonts and resource hints.
+
+
+POSITIONING
+-----------
+
+This is a complete, honest free plugin, not a crippled demo. It does four things
+properly and says plainly what it does not do.
+
+Say "add Pro", never "upgrade to Pro". Pro is an add-on that runs alongside this
+plugin and shares none of its features. "Upgrade" reads as a replacement, and a
+customer who acts on that reading deactivates this plugin and loses all four
+optimisations with nothing to tell them why.
+
+
+CSS CLASS PREFIX
+----------------
+
+bfpk   (BlueFairy Performance Kit)
+
+
+HTML LONG DESCRIPTION
+---------------------
+
+(WooCommerce long description for the FREE product. Classes match the
+.bfpk-sp-desc .bfpk-dc-* rules in single-product-bluefairy-performance-kit.html)
+
+<div class="bfpk-dc-grid">
+
+  <div class="bfpk-dc-card">
+    <div class="bfpk-dc-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b5fc0" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+    </div>
+    <h3>Emoji scripts, gone</h3>
+    <p>WordPress loads a detection script and a stylesheet on every page to swap emoji for images on browsers that stopped needing the help a decade ago. Removed from the front end, the admin and embeds &mdash; along with the feed, RSS and mail filters and the <code>s.w.org</code> prefetch hint. Your emoji still display; they are ordinary Unicode.</p>
+  </div>
+
+  <div class="bfpk-dc-card">
+    <div class="bfpk-dc-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b5fc0" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    </div>
+    <h3>oEmbed overhead, gone</h3>
+    <p>The discovery <code>&lt;link&gt;</code> tags that let other sites embed your posts, and the <code>wp-embed</code> script that renders other people&rsquo;s embeds inside yours. Pasting a YouTube URL still works exactly as before.</p>
+  </div>
+
+  <div class="bfpk-dc-card">
+    <div class="bfpk-dc-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b5fc0" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    </div>
+    <h3>Heartbeat, off the front end</h3>
+    <p>WordPress polls <code>admin-ajax.php</code> on a timer. In wp-admin that drives autosave and post locking; on the front end it does nothing for a visitor who will never open the dashboard. Removed there and only there &mdash; autosave and post locking are untouched.</p>
+  </div>
+
+  <div class="bfpk-dc-card">
+    <div class="bfpk-dc-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b5fc0" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
+    </div>
+    <h3>Iframes lazy-load too</h3>
+    <p>WordPress adds <code>loading="lazy"</code> to images and not to iframes, which is where an embedded video or map sits &mdash; usually the heaviest thing below the fold. Added to any iframe in post content that does not already have it.</p>
+  </div>
+
+  <div class="bfpk-dc-card">
+    <div class="bfpk-dc-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b5fc0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <h3>Knows what else is running</h3>
+    <p>Detects WP Rocket, LiteSpeed Cache, W3 Total Cache, Autoptimize, WP Super Cache and SiteGround Optimizer, and says so on its own settings page. Nothing breaks when both are active &mdash; the work is just done twice &mdash; so switch off whichever half you prefer.</p>
+  </div>
+
+  <div class="bfpk-dc-card">
+    <div class="bfpk-dc-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b5fc0" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+    </div>
+    <h3>Four switches, and that is all</h3>
+    <p>Everything is on the moment you activate it. The settings page exists so you can turn something back on, not so you can make it work. No dashboard, no wizard, no account.</p>
+  </div>
+
+</div>
+
+<div class="bfpk-dc-included">
+  <h3>What&rsquo;s included</h3>
+  <ul>
+    <li>Emoji detection script removed from front end, admin and embeds</li>
+    <li>Emoji stylesheet removed on both the modern and legacy enqueue paths</li>
+    <li>Emoji feed, RSS comment, mail and TinyMCE filters removed</li>
+    <li>s.w.org DNS-prefetch hint removed</li>
+    <li>oEmbed discovery links removed, at the priority WordPress really uses</li>
+    <li>wp-embed script dequeued on the front end</li>
+    <li>Heartbeat deregistered on the front end only</li>
+    <li>loading="lazy" added to iframes in post content</li>
+    <li>Settings &rarr; Performance with one toggle per feature</li>
+    <li>Conflict detection for six caching and optimisation plugins</li>
+    <li>Clean uninstall &mdash; three options, nothing else</li>
+    <li>GPL-2.0-or-later &middot; PHP 8.1+ &middot; WordPress 6.4+</li>
+  </ul>
+</div>
+
+
+SHORT DESCRIPTION (WooCommerce)
+-------------------------------
+
+Removes the emoji scripts, oEmbed JavaScript and front-end heartbeat WordPress
+loads whether you use them or not, and lazy-loads iframes. Four switches, all on
+by default, nothing to configure. Free and GPL.
+
+
+WHAT THIS PLUGIN DOES NOT DO
+----------------------------
+
+State these plainly. They are the upgrade argument, and hiding them produces
+refund requests.
+
+- No critical CSS. Your stylesheets still block the first paint.
+- No font handling. Google Fonts still come from Google.
+- No resource hints, no LCP preload.
+- No image work of any kind.
+
+All four are in Pro. See COMPARISON.md for the table, and note that Pro is an
+ADD-ON: it does not include the four features above, so a Pro customer needs
+both plugins.

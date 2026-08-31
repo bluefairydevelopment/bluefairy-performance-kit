@@ -1,42 +1,67 @@
-# BlueFairy Performance Kit Lite
+# BlueFairy Performance Kit
 
-A zero-configuration WordPress plugin that applies four essential performance optimisations on activation.
+Removes the front-end weight WordPress adds by default, and lazy-loads iframes.
+
+**Version:** 1.1.0 · **WordPress:** 6.4+ · **PHP:** 8.1+ · **Licence:** GPL-2.0-or-later
+
+This is the free base plugin of a pair. [BlueFairy Performance Kit Pro](https://wordpress.bluefairydevelopment.com/product/bluefairy-performance-kit-pro/) is an add-on that extends the classes here; it does not replace this plugin and will not run without it.
+
+Customer-facing feature list: `FEATURES.md`. The Pro/free comparison, which is easy to get wrong in both directions: `docs/COMPARISON.md`.
+
+---
 
 ## Features
 
-| Feature | Description |
-|---|---|
-| Native lazy loading | Enables `loading="lazy"` on images (via core filter) and iframes (via content filter) |
-| Emoji removal | Strips the emoji detection script, styles, TinyMCE plugin, and `s.w.org` DNS-prefetch |
-| Embed cleanup | Removes oEmbed discovery `<link>` tags and the `wp-embed` script from the frontend |
-| Heartbeat control | Deregisters the Heartbeat API script on the frontend; admin and editor are unaffected |
+- **Emoji removal** — detection script, stylesheet (modern and legacy enqueue paths), feed, RSS and mail filters, TinyMCE plugin, `s.w.org` hint.
+- **oEmbed removal** — discovery links and the `wp-embed` script.
+- **Front-end heartbeat** — deregistered on `wp_enqueue_scripts`, so wp-admin and the editor keep theirs.
+- **Iframe lazy loading** — `loading="lazy"` on iframes in post content.
+- **Settings → Performance** — one toggle per feature, stored in `bfpk_features`.
+- **Conflict detection** — six caching plugins, evaluated per request.
 
-## Requirements
-
-- WordPress 6.4+
-- PHP 8.1+
-
-## Installation
+## File structure
 
 ```
-wp plugin install bluefairy-performance-kit-lite --activate
+bluefairy-performance-kit.php   Header, constants, autoloader, lifecycle hooks
+includes/
+  Plugin.php                    Boot: fires bfpk_loaded, then binds subsystems
+  Installer.php                 Activation checks and defaults
+  FeatureRegistry.php           Labels, descriptions, is_enabled(), sanitiser
+  ConflictDetector.php          Caching-plugin detection, per request
+  HookRemover.php               remove_action() at the priority core really used
+  Features/
+    LazyLoading.php
+    EmojiRemoval.php
+    EmbedRemoval.php
+    HeartbeatControl.php
+  Admin/
+    SettingsPage.php            Settings → Performance
+    ProUpsell.php               Hidden while Pro is active
+uninstall.php                   Deletes its three options by name
 ```
 
-Or upload the folder to `wp-content/plugins/` and activate via the Plugins screen.
+## Extension points
 
-## Development
+Pro is built entirely on these. They are public API — changing one is a breaking change.
 
-```
-# Lint with PHP_CodeSniffer (WordPress Coding Standards)
-phpcs --standard=WordPress includes/ bluefairy-performance-kit-lite.php
-```
+| Hook | Type | Purpose |
+|---|---|---|
+| `bfpk_loaded` | action | Fired by `Plugin::boot()` **before** any subsystem binds. This is where an add-on registers. Firing it afterwards would be useless: a feature label added later is not in the list when the settings page reads it. Does not fire when this plugin is inactive, so an add-on must also check the dependency on `plugins_loaded`. |
+| `bfpk_feature_labels` | filter | Adds entries to the toggle list. The same array drives the checkboxes, the sanitiser and every `is_enabled()` call, so one added key is a working, persistable toggle. |
+| `bfpk_feature_descriptions` | filter | The sentence under each checkbox. |
+| `bfpk_register_settings` | action | Passed `$page` and `$group`. Register your own sections and fields onto the base's screen and option group. |
+| `bfpk_settings_page_footer` | action | Render below the settings form. |
 
-No build step, no Composer dependencies, no npm packages.
+`FeatureRegistry::is_enabled()` treats an unknown key as enabled, so an add-on's features work the moment it activates without the stored option being rewritten first.
 
-## Upgrading
+## Why HookRemover exists
 
-[BlueFairy Performance Kit Pro](https://wordpress.bluefairydevelopment.com/product/bluefairy-performance-kit/) adds LQIP blur-up placeholders, critical CSS extraction, resource hints, and local Google Fonts.
+`remove_action( $hook, $fn )` defaults to priority 10 and does nothing at all when the real priority differs. WordPress binds `wp_oembed_add_discovery_links` at priority **4**, so the obvious call removed nothing and this plugin printed those links on every singular page for its entire 1.0.0 life while the readme said it did not.
 
-## License
+`HookRemover::remove()` asks `has_action()` for the current priority and removes at that, so a core change of priority cannot silently disable a feature again.
 
-GPL-2.0-or-later. See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html).
+## Coding standards
+
+- `declare(strict_types=1)` in every file
+- Output escaped at the point of output; never in exception messages
+- No output from constructors or `register()` methods — hook registration only
