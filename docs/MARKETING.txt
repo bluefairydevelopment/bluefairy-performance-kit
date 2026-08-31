@@ -94,6 +94,17 @@ HTML LONG DESCRIPTION
 
 </div>
 
+<div class="bfpk-dc-shots">
+  <figure>
+    <img src="/wp-content/uploads/2026/08/PerformanceKitSettings-2.png" alt="Settings screen showing the four optimisation switches, each with a sentence describing it">
+    <figcaption>Settings &rarr; Performance &mdash; four switches, all on by default</figcaption>
+  </figure>
+  <figure>
+    <img src="/wp-content/uploads/2026/08/PerformanceKitPluginsRow.png" alt="The plugin row on the Plugins screen with Settings and Get Performance Kit Pro links">
+    <figcaption>The plugins row, with a direct link to Settings</figcaption>
+  </figure>
+</div>
+
 <div class="bfpk-dc-included">
   <h3>What&rsquo;s included</h3>
   <ul>
