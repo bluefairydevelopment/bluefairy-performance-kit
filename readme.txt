@@ -1,5 +1,6 @@
 === BlueFairy Performance Kit ===
 Contributors: bluefairydevelopment
+Donate link: https://ko-fi.com/bluefairydevelopment
 Tags: performance, speed, emoji, oembed, heartbeat
 Requires at least: 6.4
 Tested up to: 7.1
