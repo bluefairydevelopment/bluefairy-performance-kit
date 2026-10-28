@@ -3,7 +3,7 @@
  * Plugin Name: BlueFairy Performance Kit
  * Plugin URI:  https://wordpress.bluefairydevelopment.com/product/bluefairy-performance-kit/
  * Description: The WordPress front-end weight you never asked for — emoji scripts, oEmbed JS, the heartbeat — removed, plus native lazy loading. No configuration required. Add BlueFairy Performance Kit Pro for critical CSS, LQIP images, resource hints and self-hosted Google Fonts.
- * Version:     1.1.0
+ * Version:     1.1.1
  * Requires at least: 6.4
  * Requires PHP: 8.1
  * Author:      Blue Fairy Development
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'BFPK_PLUGIN_FILE', __FILE__ );
 define( 'BFPK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BFPK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'BFPK_VERSION', '1.1.0' );
+define( 'BFPK_VERSION', '1.1.1' );
 
 /**
  * Autoloader — no Composer required.
