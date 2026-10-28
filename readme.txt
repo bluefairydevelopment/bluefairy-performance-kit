@@ -5,7 +5,7 @@ Tags: performance, speed, emoji, oembed, heartbeat
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,9 @@ Deleting the plugin removes the three options it created. Nothing else is stored
 
 == Changelog ==
 
+= 1.1.1 =
+* Fixed: The plugin package no longer includes developer and internal files that were never meant to ship.
+
 = 1.1.0 =
 * Rebuilt as the free base plugin of a pair. BlueFairy Performance Kit Pro is now an add-on that extends this plugin instead of a separate plugin that shares none of its code.
 * Added a settings page at Settings → Performance with a switch for each optimisation.
@@ -97,6 +100,9 @@ Deleting the plugin removes the three options it created. Nothing else is stored
 * Initial release: native lazy loading, emoji removal, embed cleanup and heartbeat control.
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+Removes files that did not belong in the plugin package. No action required.
 
 = 1.1.0 =
 Two optimisations this plugin claimed to perform were silently doing nothing — oEmbed discovery links and the emoji stylesheet are now genuinely removed. Adds a settings page so you can switch any of them off.

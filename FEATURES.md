@@ -1,6 +1,6 @@
 # BlueFairy Performance Kit — Feature Guide
 
-Version 1.1.0 | GPL-2.0-or-later | PHP 8.1+ | WordPress 6.4+
+Version 1.1.1 | GPL-2.0-or-later | PHP 8.1+ | WordPress 6.4+
 
 WordPress ships front-end JavaScript and CSS that most sites never use. This
 plugin takes it out, adds lazy loading for iframes, and otherwise stays out of

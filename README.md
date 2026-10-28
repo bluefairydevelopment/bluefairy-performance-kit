@@ -2,7 +2,7 @@
 
 Removes the front-end weight WordPress adds by default, and lazy-loads iframes.
 
-**Version:** 1.1.0 · **WordPress:** 6.4+ · **PHP:** 8.1+ · **Licence:** GPL-2.0-or-later
+**Version:** 1.1.1 · **WordPress:** 6.4+ · **PHP:** 8.1+ · **Licence:** GPL-2.0-or-later
 
 This is the free base plugin of a pair. [BlueFairy Performance Kit Pro](https://wordpress.bluefairydevelopment.com/product/bluefairy-performance-kit-pro/) is an add-on that extends the classes here; it does not replace this plugin and will not run without it.
 
