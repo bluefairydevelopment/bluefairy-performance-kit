@@ -12,7 +12,7 @@ Versioning: major = architecture change, minor = new feature, patch = bug or sec
 ### Fixed
 - The plugin package no longer includes developer and internal files that were never meant to ship.
 
-1.1.0] — 2026-08-31
+## [1.1.0] — 2026-08-31
 
 Rebuilt as the free base plugin of a free/Pro pair. BlueFairy Performance Kit
 Pro is now an add-on that extends these classes rather than a separate plugin
