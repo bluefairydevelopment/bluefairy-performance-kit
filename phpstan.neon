@@ -1,0 +1,15 @@
+includes:
+  - vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+  phpVersion: 80100
+  level: 6
+  # Filter values and stored options can be any type at runtime; keep the
+  # code's guards for them rather than trusting the docblock types.
+  treatPhpDocTypesAsCertain: false
+  paths:
+    - bluefairy-performance-kit.php
+    - uninstall.php
+    - includes/
+  bootstrapFiles:
+    - vendor/szepeviktor/phpstan-wordpress/bootstrap.php
